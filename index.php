@@ -1,5 +1,5 @@
 <?php
-    require_once("controller/mainController.php");
+    require_once("./controller/mainController.php");
 
     $main_controller = new MainController();
 
