@@ -1,8 +1,8 @@
 <?php
     abstract class Model{
-        private PDO $db;
+        private ?PDO $db = null;
 
-        protected function execRequest(string $sql, array $params = null) : PDOStatement|false {
+        protected function execRequest(string $sql, array $params = null) : PDOStatement|bool {
             $db = $this->getDB();
             $statement = $db->prepare($sql);
             return $statement->execute($params);

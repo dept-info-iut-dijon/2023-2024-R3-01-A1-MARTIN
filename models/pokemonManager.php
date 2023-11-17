@@ -1,14 +1,17 @@
 <?php
+    require_once("models/Model.php");
     class PokemonManager extends Model {
        public function getAll() : Array{
             $resultat = array();
+            $donnees = array();
             $sql = "SELECT * FROM POKEMON";
             $response = $this->execRequest($sql, []);
-
-            while($donnees = $response->fetch(PDO::FETCH_ASSOC)) {
-                $pokemon = new Pokemon();
-                $pokemon->hydrate($donnees);
-                $resultat[] = $pokemon;
+            if(is_a($response, "PDOStatement")){
+                while($donnees = $response->fetch(PDO::FETCH_ASSOC)) {
+                    $pokemon = new Pokemon();
+                    $pokemon->hydrate(array($donnees));
+                    $resultat[] = $pokemon;
+                }
             }
             return $resultat;
         }  
@@ -17,9 +20,15 @@
             $result = null;
             $sql = "SELECT * FROM POKEMON WHERE idPokemon =? ";
             $response = $this->execRequest($sql, array($id));
-            $pokemon = new Pokemon();
-            $pokemon->hydrate(array($response));
-            $result = $pokemon;
+            if(is_a($response, "PDOStatement")){
+                if($donnees = $response->fetch(PDO::FETCH_ASSOC)) {
+
+                    $pokemon = new Pokemon();
+                    $pokemon->hydrate(array($response));
+                    $result = $pokemon;
+                }
+            }
+
             return $result;
         }
     }
