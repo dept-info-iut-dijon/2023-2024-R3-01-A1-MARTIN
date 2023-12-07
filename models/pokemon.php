@@ -43,6 +43,7 @@ class Pokemon{
     }
     public function setUrlImg(?string $urlImg) {
         $this->urlImg = $urlImg;
+        
     }
 
     public function hydrate(array $data) {

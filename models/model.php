@@ -5,7 +5,9 @@
         protected function execRequest(string $sql, array $params = null) : PDOStatement|bool {
             $db = $this->getDB();
             $statement = $db->prepare($sql);
-            return $statement->execute($params);
+            $statement->execute($params);
+            return $statement;
+            
         }
 
         public function getDB() : PDO {
