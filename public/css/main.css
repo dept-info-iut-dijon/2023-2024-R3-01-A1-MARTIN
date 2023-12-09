@@ -1,0 +1,13 @@
+.imageList{
+    height: 50px;
+    width: 50px;
+}
+
+.updatePokemon{
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    background-image: url("img/delete.png");
+    background-size: cover;
+    color: white;
+}

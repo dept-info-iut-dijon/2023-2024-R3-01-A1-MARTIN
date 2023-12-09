@@ -28,8 +28,8 @@
                 $result .= "<td>" . $item->GetIdPokemon() . "</th>";
                 $result .= "<td>". $item->getDescription() ."</td>";
                 $result .= "<td>". $item->getTypeOne() ." " . $item->getTypeTwo() ."</td>";
-                $result .= "<td><img src=" . $item->getUrlImg() ." alt=photo de pokemon></td>";
-                $result .= "<td>bouton</td>";
+                $result .= "<td><img src=" . $item->getUrlImg() ." alt=photodepokemon class=imageList></td>";
+                $result .= "<td><a class=updatePokemon href=index.php?action=edit-pokemon&idPokemon=" . $item->GetIdPokemon() . ">Edit  </a><a class=deletePokemon href=index.php?action=delete-pokemon&idPokemon=" . $item->GetIdPokemon() . ">  Delete</a></td>";
                 $result .= "</tr>";
             }    
             $result .= "</tbody>";
