@@ -1,13 +1,32 @@
-.imageList{
-    height: 50px;
-    width: 50px;
+.imageList {
+  height: 100px;
+  width: 100px;
 }
 
-.updatePokemon{
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    background-image: url("img/delete.png");
-    background-size: cover;
-    color: white;
+.updatePokemon {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  background-image: url("img/delete.png");
+  background-size: cover;
+  color: white;
+}
+
+.monHeader nav {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.monHeader nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.monHeader nav a:hover {
+  text-decoration: underline;
 }

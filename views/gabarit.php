@@ -12,12 +12,16 @@
 <body>
 <header>
     <!-- Menu -->
-    <nav>
-    <a href="index.php">Accueil</a>
-    <a href="index.php?action=add-pokemon">Ajouter un pokemon</a>
-    <a href="index.php?add-pokemon-type">Ajouter un type de pokemon</a>
-    <a href="index.php?action=search">Rechercher</a>
-    </nav>
+    <div class="monHeader">
+        <nav class="navHeader">
+        <a href="index.php">Accueil</a>
+        <a href="index.php?action=add-pokemon">Ajouter un pokemon</a>
+        <a href="index.php?add-pokemon-type">Ajouter un type de pokemon</a>
+        <a href="index.php?action=search">Rechercher</a>
+        </nav>
+    </div>
+
+
 </header>
 <!-- #contenu -->
 <main id="contenu">
