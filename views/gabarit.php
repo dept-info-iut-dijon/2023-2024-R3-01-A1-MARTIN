@@ -16,7 +16,7 @@
         <nav class="navHeader">
         <a href="index.php">Accueil</a>
         <a href="index.php?action=add-pokemon">Ajouter un pokemon</a>
-        <a href="index.php?add-pokemon-type">Ajouter un type de pokemon</a>
+        <a href="index.php?action=add-pokemon-type">Ajouter un type de pokemon</a>
         <a href="index.php?action=search">Rechercher</a>
         </nav>
     </div>

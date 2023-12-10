@@ -1,1 +1,1 @@
-<?php echo "vueAddPokemon"; ?>
+<p>oui</p>
