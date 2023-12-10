@@ -16,8 +16,9 @@
             <thead>
               <tr>
                   <th>ID Pokemon</th>
+                  <th>Nom</th>
                   <th>Description</th>
-                  <th>Types</th>
+                  <th>Type(s)</th>
                   <th>Image</th>
                   <th>Options</th>
               </tr>
@@ -26,10 +27,11 @@
             foreach($listPokemon as $item){
                 $result .= "<tr>";
                 $result .= "<td>" . $item->GetIdPokemon() . "</th>";
+                $result .= "<td>". $item->getNomEspece() . "</td>";
                 $result .= "<td>". $item->getDescription() ."</td>";
                 $result .= "<td>". $item->getTypeOne() ." " . $item->getTypeTwo() ."</td>";
                 $result .= "<td><img src=" . $item->getUrlImg() ." alt=photodepokemon class=imageList></td>";
-                $result .= "<td><a class=updatePokemon href=index.php?action=edit-pokemon&idPokemon=" . $item->GetIdPokemon() . ">Edit  </a><a class=deletePokemon href=index.php?action=delete-pokemon&idPokemon=" . $item->GetIdPokemon() . ">  Delete</a></td>";
+                $result .= "<td><a href=index.php?action=edit-pokemon&idPokemon=" . $item->GetIdPokemon() . ">Edit   </a><a class=deletePokemon href=index.php?action=del-pokemon&idPokemon=" . $item->GetIdPokemon() . ">   Delete</a></td>";
                 $result .= "</tr>";
             }    
             $result .= "</tbody>";

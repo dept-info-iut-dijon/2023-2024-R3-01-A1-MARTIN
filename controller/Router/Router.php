@@ -3,6 +3,10 @@
     require_once("controller/PokemonController.php");
     require_once("controller/Router/Route/RouteIndex.php");
     require_once("controller/Router/Route/RouteAddPokemon.php");
+    require_once("controller/Router/Route/RouteAddType.php");
+    require_once("controller/Router/Route/RouteSearch.php");
+    require_once("controller/Router/Route/RouteDelete.php");
+    require_once("controller/Router/Route/RouteEdit.php");
 
      class Router{
         private array $routeList;
@@ -25,7 +29,11 @@
         public function createRouteList(){
             $this->routeList = [     
                 "Index" => new RouteIndex($this->ctrlList["main"]),
-                "add-pokemon" => new RouteAddPokemon($this->ctrlList["Pokemon"])
+                "add-pokemon" => new RouteAddPokemon($this->ctrlList["Pokemon"]),
+                "add-pokemon-type" => new RouteAddType($this->ctrlList["Pokemon"]),
+                "search" => new RouteSearch($this->ctrlList["Pokemon"]),
+                "del-pokemon" => new RouteDelete($this->ctrlList["Pokemon"]),
+                "edit-pokemon" => new RouteEdit($this->ctrlList["Pokemon"]),
         ];
         }
 
