@@ -45,7 +45,7 @@
                 if (isset($this->routeList[$routeKey])) {
                     $route = $this->routeList[$routeKey];
                     $method = !empty($post) ? 'POST' : 'GET';
-    
+                    
                     // Appeler la méthode action de la route avec la méthode et les données appropriées
                     $route->action(($method === 'POST') ? $post : $get, $method);
                 }

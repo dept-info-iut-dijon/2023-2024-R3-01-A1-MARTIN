@@ -7,12 +7,31 @@
         }
 
         function get($params = []){
-            if(isset($params["idPokemon"])){
-            $this->controller->displayEdit();
+            try {
+                $idPokemon = $this->getParam($params, "idPokemon", false);
+                $this->controller->displayEditPokemon($idPokemon);
+            } catch (Exception $e) {
+                $this->controller->displayAddPokemon("ID not found");
             }
         }
 
         function post($params = []){
+        //    try {
+                // Récupérer les données nécessaires du formulaire
+                $dataPokemon = [
+                    'idPokemon' => $this->getParam($params, 'idPokemon', false),
+                    'nomEspece' => $this->getParam($params, 'nomEspece', false),
+                    'description' => $this->getParam($params, 'description', false),
+                    'typeOne' => $this->getParam($params, 'typeOne', false),
+                    'typeTwo' => $this->getParam($params, 'typeTwo', true), // Peut être vide
+                    'urlImg' => $this->getParam($params, 'urlImg', false)
+                ];
+                // Transmettre les données au contrôleur
+                $this->controller->editPokemonAndIndex($dataPokemon);
+      //      } catch (Exception $e) {
+   //             $errorMessage = $e->getMessage();
+     //           $this->controller->displayAddPokemon($errorMessage);
+       //     }
         }
     }
 ?>
