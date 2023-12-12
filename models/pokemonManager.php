@@ -46,17 +46,14 @@
             ];
 
             // Exécuter la requête
-            $this->execRequest($sql, $values);
-
+            $data = $this->execRequest($sql, $values)->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($data)){
+                $pokemon->setIdPokemon($data[0]["id"]);
+            }
             // Récupérer l'ID du Pokémon inséré
-            $id = $this->getLastId();  
-            $pokemon->setIdPokemon($id);
+            
 
             return $pokemon;
-        }
-
-        public function getlastId() : int{
-            return parent::$db->lastInsertId();
         }
 
         public function deletepokemon(int $idPokemon = -1){

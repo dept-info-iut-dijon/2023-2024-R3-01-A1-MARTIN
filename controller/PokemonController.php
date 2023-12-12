@@ -38,9 +38,10 @@ require_once("models/pokemonManager.php");
             }else{
                 $message = "Un problème a eu lieu lors de la création du Pokemon";
             }
+            $listPokemon = $pokemonManager->getAll();
 
             $view = new View("Index");
-            $view->generer(['message' => $message]);
+            $view->generer(['message' => $message, "listPokemon" => $listPokemon]);
             
         }
 
@@ -83,7 +84,7 @@ require_once("models/pokemonManager.php");
     
             // Créer et mettre à jour le Pokémon
             $success = $pokemonManager->editPokemonAndIndex($dataPokemon);
-            
+
             $listPokemon = $pokemonManager->getAll();
             $first = $pokemonManager->getId(1);
             $other = $pokemonManager->getId(0);
