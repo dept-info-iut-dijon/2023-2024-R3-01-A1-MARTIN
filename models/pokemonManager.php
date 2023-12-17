@@ -40,11 +40,10 @@
                 $pokemon->GetIdPokemon(),
                 $pokemon->getNomEspece(),
                 $pokemon->getDescription(),
-                $pokemon->getTypeOne()->getIdType(),
-                $pokemon->getTypeTwo()?->getIdType(),
+                $pokemon->getTypeOne(),
+                $pokemon->getTypeTwo(),
                 $pokemon->getUrlImg()
             ];
-
             // Exécuter la requête
             $data = $this->execRequest($sql, $values)->fetchAll(PDO::FETCH_ASSOC);
             if(!empty($data)){

@@ -29,8 +29,8 @@ require_once("models/PkmnTypeManager.php");
 
         public function addPokemon(array $pokemonInfo){
             $pokemon = new Pokemon();
-            $pokemon->hydrate($pokemonInfo);
 
+            $pokemon->hydrate($pokemonInfo);
             $pokemonManager = new PokemonManager();
             $success = $pokemonManager->createPokemon($pokemon);
 
@@ -99,7 +99,6 @@ require_once("models/PkmnTypeManager.php");
         public function addType(array $typeInfo) {{
             $type = new PkmnType();
             $type->hydrate($typeInfo);
-            var_dump($type);
             $pkmnTypeManager = new PkmnTypeManager();
             $success = $pkmnTypeManager->createPkmnType($type);
         

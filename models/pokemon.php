@@ -4,8 +4,8 @@ class Pokemon{
     private ?int $idPokemon;
     private string $nomEspece;
     private ?string $description;
-    private ?PkmnType $typeOne;
-    private ?PkmnType $typeTwo;
+    private ?int $typeOne;
+    private ?int $typeTwo;
     private ?string $urlImg;
 
     public function GetIdPokemon(): ?int{
@@ -17,10 +17,10 @@ class Pokemon{
     public function getDescription(): ?string{
         return $this->description;
     }
-    public function getTypeOne(): ?PkmnType{
+    public function getTypeOne(): ?int{
         return $this->typeOne;
     }
-    public function getTypeTwo(): ?PkmnType{
+    public function getTypeTwo(): ?int{
         return $this->typeTwo;
     }
     public function getUrlImg(): ?string{
@@ -36,10 +36,10 @@ class Pokemon{
     public function setDescription(?string $description) {
         $this->description = $description;
     }
-    public function setTypeOne(PkmnType|int $typeOne) {
+    public function setTypeOne(int $typeOne) {
         $this->typeOne = $typeOne;
     }
-    public function setTypeTwo(PkmnType|int|null $typeTwo) {
+    public function setTypeTwo(int|null $typeTwo) {
         $this->typeTwo = $typeTwo;
     }
     public function setUrlImg(?string $urlImg) {

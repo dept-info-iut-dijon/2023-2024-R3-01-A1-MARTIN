@@ -43,7 +43,7 @@
             // Exécuter la requête
             $data = $this->execRequest($sql, $values)->fetchAll(PDO::FETCH_ASSOC);
             if(!empty($data)){
-                $type->setIdTpe($data[0]["id"]);
+                $type->setIdType($data[0]["id"]);
             }
             // Récupérer l'ID du Pokémon inséré
             

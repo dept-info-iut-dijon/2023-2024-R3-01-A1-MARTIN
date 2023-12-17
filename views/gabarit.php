@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="public/css/main.css"/>
     <link rel="stylesheet" href="public/css/formulaire.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);});</script>
     <title><?= $titre ?></title>
 </head>
 

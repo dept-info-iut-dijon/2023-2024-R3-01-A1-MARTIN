@@ -54,16 +54,19 @@
 
         <label for="description">Description:</label>
         <textarea name="description" id="description" rows="4" required></textarea>
+        <div class="input-field">
+            <select id="TypeOne" name="TypeOne" class="combo">
+                <?= $result ?>    
+            </select>
+            <label>Choisissez un type :</label>
 
-        <label for="TypeOne">Choisissez un type :</label>
-        <select id="TypeOne" name="nom_combo" class="combo">
-            <?= $result ?>    
-        </select>
-        <label for="TypeTwo">Choisissez un deuxième type (optionnel) :</label>
-        <select id="TypeTwo" name="nom_combo">
-            <?= $result ?>    
-        </select>
-
+        </div>
+        <div class="input-field">
+            <select id="TypeTwo" name="TypeTwo">
+                <?= $result ?>    
+            </select>
+            <label >Choisissez un deuxième type (optionnel) :</label>
+        </div>
         <label for="image">URL de l'image:</label>
         <input type="text" name="image" id="image" required>
 
