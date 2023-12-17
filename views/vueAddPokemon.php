@@ -1,3 +1,26 @@
+<?php
+    class vueAddPokemon{
+        public function comboBoxType() : string{
+            $manager = new PkmnTypeManager();
+            $types = $manager->getAll();
+            $result = "";
+            $incr = 1;
+            foreach($types as $type){
+
+                $result .= "<option value=" . $incr .">". $type->getNomType() ."</option>";
+                $incr++;
+            }
+
+            return $result;
+        }
+
+    }
+
+    $vueAddPokemon = new VueAddPokemon();
+    $result = $vueAddPokemon->comboBoxType();
+
+?>
+
 <?php if (isset($pokemon)): ?>
     <form action="index.php?action=edit-pokemon" method="post">
         <label for="idPokemon">ID du Pokémon:</label>
@@ -32,11 +55,14 @@
         <label for="description">Description:</label>
         <textarea name="description" id="description" rows="4" required></textarea>
 
-        <label for="TypeOne">Type 1:</label>
-        <input type="text" name="TypeOne" id="TypeOne" required>
-
-        <label for="TypeTwo">Type 2:</label>
-        <input type="text" name="TypeTwo" id="TypeTwo">
+        <label for="TypeOne">Choisissez un type :</label>
+        <select id="TypeOne" name="nom_combo" class="combo">
+            <?= $result ?>    
+        </select>
+        <label for="TypeTwo">Choisissez un deuxième type (optionnel) :</label>
+        <select id="TypeTwo" name="nom_combo">
+            <?= $result ?>    
+        </select>
 
         <label for="image">URL de l'image:</label>
         <input type="text" name="image" id="image" required>

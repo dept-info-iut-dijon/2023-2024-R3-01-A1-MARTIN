@@ -22,7 +22,7 @@
         public function createControllerList(){
             $this->ctrlList = [
                 "main" => new MainController(),
-                "Pokemon" => new PokemonController(),
+                "Pokemon" => new PokemonController(), 
             ];
         }
 
@@ -34,6 +34,7 @@
                 "search" => new RouteSearch($this->ctrlList["Pokemon"]),
                 "del-pokemon" => new RouteDelete($this->ctrlList["Pokemon"]),
                 "edit-pokemon" => new RouteEdit($this->ctrlList["Pokemon"]),
+                "add-type" => new RouteAddType($this->ctrlList["Pokemon"]),
         ];
         }
 
@@ -45,7 +46,7 @@
                 if (isset($this->routeList[$routeKey])) {
                     $route = $this->routeList[$routeKey];
                     $method = !empty($post) ? 'POST' : 'GET';
-                    
+
                     // Appeler la méthode action de la route avec la méthode et les données appropriées
                     $route->action(($method === 'POST') ? $post : $get, $method);
                 }

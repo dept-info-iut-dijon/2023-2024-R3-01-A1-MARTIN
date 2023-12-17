@@ -1,5 +1,6 @@
 <?php
 require_once("models/pokemonManager.php");
+require_once("models/PkmnTypeManager.php");
     class PokemonController{
         public function displayAddPokemon(?string $message = null){
             $addPokemonView = new View("AddPokemon");
@@ -94,5 +95,21 @@ require_once("models/pokemonManager.php");
             $indexView = new View("Index");
             $indexView->generer(['message' => $message, "first" => $first, "other" => $other, "listPokemon" => $listPokemon]);
         }
+
+        public function addType(array $typeInfo) {{
+            $type = new PkmnType();
+            $type->hydrate($typeInfo);
+            var_dump($type);
+            $pkmnTypeManager = new PkmnTypeManager();
+            $success = $pkmnTypeManager->createPkmnType($type);
+        
+
+            $pokemonManager = new PokemonManager();
+            $listPokemon = $pokemonManager->getAll();
+
+            $view = new View("Index");
+            $view->generer(["listPokemon" => $listPokemon]);
+        }
     }
+}
 ?>

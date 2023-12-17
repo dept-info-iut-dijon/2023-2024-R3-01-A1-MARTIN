@@ -28,10 +28,7 @@
                 ];
                 // Transmettre les données au contrôleur
                 $this->controller->editPokemonAndIndex($dataPokemon);
-      //      } catch (Exception $e) {
-   //             $errorMessage = $e->getMessage();
-     //           $this->controller->displayAddPokemon($errorMessage);
-       //     }
+
         }
     }
 ?>

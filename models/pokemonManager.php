@@ -40,8 +40,8 @@
                 $pokemon->GetIdPokemon(),
                 $pokemon->getNomEspece(),
                 $pokemon->getDescription(),
-                $pokemon->getTypeOne(),
-                $pokemon->getTypeTwo(),
+                $pokemon->getTypeOne()->getIdType(),
+                $pokemon->getTypeTwo()?->getIdType(),
                 $pokemon->getUrlImg()
             ];
 

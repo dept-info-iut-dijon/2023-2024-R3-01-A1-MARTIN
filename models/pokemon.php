@@ -1,10 +1,11 @@
 <?php
+require_once("PkmnType.php");
 class Pokemon{
     private ?int $idPokemon;
     private string $nomEspece;
     private ?string $description;
-    private string $typeOne;
-    private ?string $typeTwo;
+    private ?PkmnType $typeOne;
+    private ?PkmnType $typeTwo;
     private ?string $urlImg;
 
     public function GetIdPokemon(): ?int{
@@ -16,10 +17,10 @@ class Pokemon{
     public function getDescription(): ?string{
         return $this->description;
     }
-    public function getTypeOne(): ?string{
+    public function getTypeOne(): ?PkmnType{
         return $this->typeOne;
     }
-    public function getTypeTwo(): ?string{
+    public function getTypeTwo(): ?PkmnType{
         return $this->typeTwo;
     }
     public function getUrlImg(): ?string{
@@ -35,10 +36,10 @@ class Pokemon{
     public function setDescription(?string $description) {
         $this->description = $description;
     }
-    public function setTypeOne(?string $typeOne) {
+    public function setTypeOne(PkmnType|int $typeOne) {
         $this->typeOne = $typeOne;
     }
-    public function setTypeTwo(?string $typeTwo) {
+    public function setTypeTwo(PkmnType|int|null $typeTwo) {
         $this->typeTwo = $typeTwo;
     }
     public function setUrlImg(?string $urlImg) {
